@@ -1,3 +1,4 @@
 */.tmcproject.yml
 */tmc/
 */*/__pycache__/
+course_config.toml

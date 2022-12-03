@@ -3,7 +3,8 @@
 import numpy as np
 
 def column_comparison(a):
-    return np.array([])
+    '''takes in a 2d array, returns a 2d array which have a larger value in their 2nd coulmn than their 2nd last column'''
+    return a[a[:,1]>a[:,-2]]
     
 def main():
     pass

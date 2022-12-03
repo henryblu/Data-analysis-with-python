@@ -3,10 +3,18 @@
 import numpy as np
 
 def get_rows(a):
-    return []
+    '''This function takes a 2D array and returns a list of rows.'''
+    rows = []
+    for row in a:
+        rows.append(row)
+    return rows
 
 def get_columns(a):
-    return []
+    '''This function takes a 2D array and returns a list of columns.'''
+    columns = []
+    for column in a.T:
+        columns.append(column)
+    return columns
 
 def main():
     np.random.seed(0)

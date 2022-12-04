@@ -8,10 +8,13 @@ def load():
     return pd.read_csv("src/iris.csv").drop('species', axis=1).values
 
 def lengths():
-    return 0
+    '''retruns the pearson correlation coefficients between petal length and sepal length of the iris data set'''
+    stat,pval = scipy.stats.pearsonr(x = load()[:,0], y= load()[:,2])
+    return stat
 
 def correlations():
-    return np.array([])
+    '''returns a 2d array of the Pearson correlation coefficients between the columns of the iris data set'''
+    return np.corrcoef(load(), rowvar=False)
 
 def main():
     print(lengths())

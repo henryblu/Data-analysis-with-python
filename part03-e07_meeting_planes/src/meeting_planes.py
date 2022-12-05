@@ -3,8 +3,12 @@
 import numpy as np
 
 def meeting_planes(a1, b1, c1, a2, b2, c2, a3, b3, c3):
-    return []
+    '''get the coefficients of the planes of form -ay - bx + z = c from the user and return the meeting point'''
+    A = np.array([[-b1, -a1, 1], [-b2, -a2, 1], [-b3, -a3, 1]])
+    B = np.array([c1, c2, c3])
+    return np.linalg.solve(A, B)
 
+    
 def main():
     a1=1
     b1=4
@@ -21,3 +25,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+''''''

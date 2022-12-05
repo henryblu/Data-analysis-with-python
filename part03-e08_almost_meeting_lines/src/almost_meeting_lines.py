@@ -3,7 +3,14 @@
 import numpy as np
 
 def almost_meeting_lines(a1, b1, a2, b2):
-    return []
+    '''get the coefficients of the lines of form y = ax + b from the user and return the meeting point if there is no meeting point, return the closest point'''
+    A = np.array([[a1, -1], [a2, -1]])
+    B = np.array([-b1, -b2])
+    
+    try:
+        return (np.linalg.solve(A, B), True)
+    except np.linalg.LinAlgError:
+        return (np.linalg.lstsq(A, B, rcond=None)[0], False)
 
 def main():
     a1=1

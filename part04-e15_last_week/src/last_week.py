@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 def last_week():
-    df = pd.read_csv("src/UK-top40-1964-1-2.tsv", sep="\t")
+    df = pd.read_csv("UK-top40-1964-1-2.tsv", sep="\t")
     # first we get rid of the new songs and re-entries and replace those rows with nan
     df = df[df['LW'] != 'New']
     df = df[df['LW'] != 'Re']
@@ -24,15 +24,12 @@ def last_week():
     # now we add back missing 3 postitions 
     new_index = pd.Index(np.arange(1, 41, 1), name='Pos')
     df = df.set_index('Pos').reindex(new_index).reset_index()
-    
     return df
 
 def main():
     df = last_week()
     print(df)
-    '''print("Shape: {}, {}".format(*df.shape))
-    print("dtypes:", df.dtypes)
-    print(df)'''
+    
 
 
 if __name__ == "__main__":

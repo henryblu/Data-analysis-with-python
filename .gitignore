@@ -1,6 +1,6 @@
-*/.tmcproject.yml
-*/tmc/
-*/*/__pycache__/
-course_config.toml
-part07-e01_*
-part09-e01_*
+*/*/.tmcproject.yml
+*/*/tmc/
+*/*/*/__pycache__/
+*/course_config.toml
+*/part07-e01_*
+*/part09-e01_*
